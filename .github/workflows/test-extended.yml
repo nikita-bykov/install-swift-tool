@@ -2,9 +2,9 @@ name: "Test action - extended"
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - master
+  # push:
+  #   branches:
+  #     - master
   pull_request:
     paths:
       - '.github/workflows/test-extended.yml'
