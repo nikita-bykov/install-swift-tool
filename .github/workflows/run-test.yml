@@ -1,0 +1,17 @@
+name: "Bug test"
+
+on: workflow_dispatch
+
+jobs:
+  test:
+    runs-on: macos-10.15
+    steps:
+    - name: Install SwiftLint
+      uses: Cyberbeni/install-swift-tool@v2.1.8
+      with:
+        url: https://github.com/realm/SwiftLint
+        version: '0.40.3'
+    - name: Test tools in path
+      run: |
+        echo "class Test {}" > ./test.swift
+        swiftlint lint ./test.swift
